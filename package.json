@@ -1,0 +1,51 @@
+{
+  "name": "amarelaka",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AmarElaka — community-powered neighbourhood issue reporting for Bangladesh",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm run lint && npm run test",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:seed:areas": "tsx scripts/seed-areas.ts",
+    "db:seed:dev": "tsx scripts/seed-dev.ts",
+    "user:role": "tsx scripts/set-role.ts"
+  },
+  "dependencies": {
+    "leaflet": "1.9.4",
+    "mongodb": "6.21.0",
+    "next": "15.5.27",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-leaflet": "5.0.0",
+    "server-only": "0.0.1",
+    "sharp": "0.34.5",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.1",
+    "@types/leaflet": "1.9.22",
+    "@types/node": "20.19.43",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "autoprefixer": "10.4.21",
+    "eslint": "9.39.5",
+    "eslint-config-next": "15.5.27",
+    "mongodb-memory-server": "10.4.3",
+    "postcss": "8.5.6",
+    "tailwindcss": "3.4.19",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite-tsconfig-paths": "5.1.4",
+    "vitest": "3.2.7"
+  }
+}

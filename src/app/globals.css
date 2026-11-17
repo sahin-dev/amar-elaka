@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-canvas text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid #167a71;
+    outline-offset: 2px;
+  }
+  /* Bangla script needs a little more line height to stay readable. */
+  html[lang="bn"] body {
+    line-height: 1.65;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-card;
+  }
+  .prose-page h2 {
+    @apply mt-8 text-lg font-semibold text-ink;
+  }
+  .prose-page p,
+  .prose-page li {
+    @apply mt-3 text-[15px] text-ink-soft;
+  }
+  .prose-page ul {
+    @apply mt-2 list-disc space-y-1 pl-5;
+  }
+}
+
+/* Leaflet tweaks */
+.leaflet-container {
+  font: inherit;
+  background: #e8ecea;
+}
+.leaflet-container a {
+  color: #14625c;
+}
+.ae-marker {
+  background: transparent;
+  border: 0;
+}
+.ae-marker:focus-visible > div {
+  outline: 3px solid #111827;
+  outline-offset: 2px;
+}
+.leaflet-control-attribution {
+  font-size: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
