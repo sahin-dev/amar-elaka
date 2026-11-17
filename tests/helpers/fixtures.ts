@@ -48,9 +48,12 @@ export async function makeUser(role: Role = "resident", password = "correct hors
     createdAt: new Date(),
     updatedAt: new Date(),
     lastLoginAt: null,
+    emailVerifiedAt: new Date(),
+    emailVerificationTokenHash: null,
+    emailVerificationExpiresAt: null,
   });
   const { token } = await createSession(id);
-  return { id, email, displayName: `User ${counter}`, role, locale: "en", token, password };
+  return { id, email, displayName: `User ${counter}`, role, locale: "en", emailVerified: true, token, password };
 }
 
 export function req(

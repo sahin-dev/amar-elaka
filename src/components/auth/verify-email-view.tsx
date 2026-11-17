@@ -108,9 +108,7 @@ export function VerifyEmailView({ token, next, locale }: { token: string; next: 
 
         {(status === "idle" || status === "error" || status === "sent") && (
           <div className="space-y-4">
-            <Button type="button" onClick={resend} className="w-full" disabled={status === "sending"}>
-              {status === "sending" ? labels.sending : labels.resend}
-            </Button>
+            <Button type="button" onClick={resend} className="w-full">{labels.resend}</Button>
             <p className="text-center text-sm text-ink-muted">
               <Link href={`/login?next=${encodeURIComponent(safeNext(next))}`} className="font-medium text-brand-700 underline">
                 {labels.signIn}

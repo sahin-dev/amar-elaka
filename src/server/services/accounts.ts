@@ -82,7 +82,7 @@ export async function updateProfile(user: SessionUser, patch: { displayName?: st
 const hashVerificationToken = (token: string) => createHash("sha256").update(token).digest("hex");
 
 async function sendVerificationEmail(email: string, token: string, locale: Locale): Promise<boolean> {
-  const url = `${(process.env.APP_URL || "http://localhost:3000").replace(/\\/$/, "")}/verify-email?token=${encodeURIComponent(token)}`;
+  const url = `${(process.env.APP_URL || "http://localhost:3000").replace(/\/$/, "")}/verify-email?token=${encodeURIComponent(token)}`;
   const subject = locale === "bn" ? "AmarElaka ইমেইল যাচাই করুন" : "Verify your AmarElaka email";
   const html = locale === "bn"
     ? `<p>আপনার AmarElaka অ্যাকাউন্ট চালু করতে ইমেইলটি যাচাই করুন।</p><p><a href="${url}">ইমেইল যাচাই করুন</a></p><p>এই লিংকটি ২৪ ঘণ্টা পর মেয়াদোত্তীর্ণ হবে।</p>`
